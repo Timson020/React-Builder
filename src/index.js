@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 
 import App from '@/App'
 
-import '@/Scss/global'
+import '@/scss/global'
 
 render(
 	<App />,
