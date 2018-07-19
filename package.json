@@ -1,53 +1,52 @@
 {
-  "name": "React-Builder",
-  "version": "1.1.0",
-  "description": "react + redux + immutable + webpack + babel + eslint",
-  "main": "app.js",
-  "scripts": {
-    "setup": "",
-    "gen": "node ./tools/generator/index.js r",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server",
-    "release":　""
-  },
-  "dependencies": {
-    "immutable": "3.8.2",
-    "prop-types": "15.6.2",
-    "react": "16.4.1",
-    "react-dom": "16.4.1",
-    "react-redux": "5.0.7",
-    "react-router": "4.3.1",
-    "react-router-redux": "4.0.8",
-    "redux": "4.0.0",
-    "redux-logger": "3.0.6",
-    "redux-persist": "5.10.0",
-    "redux-thunk": "2.3.0"
-  },
-  "devDependencies": {
-    "babel-core": "6.26.3",
-    "babel-eslint": "8.2.6",
-    "babel-loader": "7.1.5",
-    "babel-plugin-transform-async-to-generator": "6.24.1",
-    "babel-plugin-transform-runtime": "6.23.0",
-    "babel-preset-react": "6.24.1",
-    "babel-preset-stage-3": "6.24.1",
-    "cross-env": "5.2.0",
-    "css-loader": "1.0.0",
-    "eslint": "5.1.0",
-    "eslint-plugin-react": "7.1.0",
-    "file-loader": "1.1.11",
-    "node-sass": "4.9.2",
-    "sass-loader": "7.0.3",
-    "style-loader": "0.21.0",
-    "webpack": "4.16.0",
-    "webpack-cli": "3.0.8",
-    "webpack-dev-server": "3.1.4"
-  },
-  "keywords": [
-    "react",
-    "redux",
-    "react-builder",
-    "web"
-  ],
-  "author": "Timson",
-  "license": "ISC"
+	"name": "React-Builder",
+	"version": "1.1.0",
+	"description": "react + redux + immutable + webpack + babel + eslint",
+	"main": "app.js",
+	"scripts": {
+		"gen": "node ./tools/generator/index.js r",
+		"dev": "cross-env NODE_ENV=development webpack-serve"
+	},
+	"dependencies": {
+		"immutable": "3.8.2",
+		"prop-types": "15.6.2",
+		"react": "16.4.1",
+		"react-dom": "16.4.1",
+		"react-redux": "5.0.7",
+		"react-router": "4.3.1",
+		"react-router-redux": "4.0.8",
+		"redux": "4.0.0",
+		"redux-logger": "3.0.6",
+		"redux-persist": "5.10.0",
+		"redux-thunk": "2.3.0"
+	},
+	"devDependencies": {
+		"babel-core": "6.26.3",
+		"babel-eslint": "8.2.6",
+		"babel-loader": "7.1.5",
+		"babel-plugin-transform-async-to-generator": "6.24.1",
+		"babel-plugin-transform-runtime": "6.23.0",
+		"babel-preset-react": "6.24.1",
+		"babel-preset-stage-3": "6.24.1",
+		"cross-env": "5.2.0",
+		"css-loader": "1.0.0",
+		"eslint": "5.1.0",
+		"eslint-plugin-react": "7.1.0",
+		"file-loader": "1.1.11",
+		"node-sass": "4.9.2",
+		"sass-loader": "7.0.3",
+		"style-loader": "0.21.0",
+		"webpack": "4.16.0",
+		"webpack-cli": "3.0.8",
+		"webpack-serve": "2.0.2"
+	},
+	"keywords": [
+		"react",
+		"redux",
+		"react-builder",
+		"web",
+		"webpack"
+	],
+	"author": "Timson",
+	"license": "ISC"
 }

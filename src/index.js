@@ -7,5 +7,5 @@ import '@/scss/global'
 
 render(
 	<App />,
-	document.getElementById('Application')
+	document.getElementById('app')
 )
