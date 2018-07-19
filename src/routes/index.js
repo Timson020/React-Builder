@@ -1,9 +1,9 @@
 import Home from './Home'
 import SignIn from './SignIn'
-import NotFoundPage from './NotFoundPage'
+import NotFound from './NotFound'
 
 export {
 	Home,
 	SignIn,
-	NotFoundPage
+	NotFound,
 }

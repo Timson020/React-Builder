@@ -1,20 +1,17 @@
 import React, { Component } from 'react'
-import { browserHistory } from 'react-router'
-import { syncHistoryWithStore } from 'react-router-redux'
+import { Provider } from 'react-redux'
 
-// import { Root } from '@/Components'
-
-import { redux } from '@/config'
-console.info(redux)
-
-// const history = syncHistoryWithStore(browserHistory, Redux)
+import store from '@/redux'
+import Routes from  '@/router'
 
 export default class App extends Component {
 	render() {
 		return (
-			<article className="app-container">
-
-			</article>
+			<Provider store={store}>
+				<article className="app flex">
+					<Routes />
+				</article>
+			</Provider>
 		)
 	}
 }
