@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import { Home, SignIn, NotFound } from '@/routes'
 
@@ -8,7 +8,6 @@ const list = [{
 	path: '/',
 	component: Home,
 }, {
-	exact: true,
 	path: '/signin',
 	component: SignIn,
 }, {
@@ -37,7 +36,9 @@ class Routers extends Component {
 
 	render() {
 		return (
-			list.map((it, i) => <Route key={i} {...it} />)
+			<Switch>
+				{list.map((it, i) => <Route key={i} {...it} />)}
+			</Switch>
 		)
 	}
 }

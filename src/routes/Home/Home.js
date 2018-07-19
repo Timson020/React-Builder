@@ -3,19 +3,25 @@ import Proptypes from 'prop-types'
 
 import './Home.scss'
 
-import { click } from './module'
+import { goNotFound, goSignIn } from './module'
 
 export default class Home extends Component {
+	static propTypes = {}
+
 	constructor(props){
 		super(props)
 		this.state = {}
 
-		this._click = click.bind(this)
+		this._goSignIn = goSignIn.bind(this)
+		this._goNotFound = goNotFound.bind(this)
 	}
 
 	render() {
 		return (
-			<div id="Home" className="Home" onClick={this._click}>Home</div>
+			<div id="Home" className="flex Home">
+				<input type="button" value="前往登录" onClick={this._goSignIn} />
+				<input type="button" value="前往NotFound" onClick={this._goNotFound} />
+			</div>
 		)
 	}
 }

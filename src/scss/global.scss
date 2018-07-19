@@ -7,3 +7,8 @@ html, body, #app, .app{
 	height: 100%;
 	overflow: hidden;
 }
+
+input[type="button"] {
+	background-color: white;
+	padding: .04rem;
+}

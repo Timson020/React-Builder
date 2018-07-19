@@ -4,6 +4,9 @@
 		"es6": true,
 		"browser": true
 	},
+	"globals": {
+		"window": true,
+	},
 	"parserOptions": {
 		"ecmaVersion": 6,
 		"ecmaFeatures": {
@@ -27,20 +30,59 @@
 		"curly": 0,
 		"no-tabs": 0,
 		"no-var": 1,
+		"no-eval": 2,
 		"no-alert": 1,
+		"no-undef": 2,
+		"no-empty": 2,
+		"no-debugger": 2,
+		"no-undefined": 2,
 		"no-unused-vars": 2,
 		"no-const-assign": 2,
+		"no-mixed-spaces-and-tabs": 2,
 		"no-console": [2, {
 			"allow": ["warn", "error", "info"],
 		}, ],
-		"no-mixed-spaces-and-tabs": 2,
 		"one-var": 0,
 		"quotes": [2, "single"],
 		"semi": [2, "never"],
-		"no-debugger": 2,
+		"react/jsx-sort-props": 0,
+		"react/jsx-indent-props": 0,
+		"react/forbid-prop-types": 0,
+		"react/require-default-props": 0,
+		"react/jsx-first-prop-new-line": 0,
 		"react/jsx-uses-react": "error",
 		"react/jsx-uses-vars": "error",
 		"react/no-render-return-value": "error",
 		"react/prefer-es6-class": "error",
+		"react/sort-comp": [2, {
+			"order": [
+				"static-methods",
+				"lifecycle",
+				"render"
+			],
+			"groups": {
+				"lifecycle": [
+					"displayName",
+					"propTypes",
+					"contextTypes",
+					"childContextTypes",
+					"getChildContext",
+					"mixins",
+					"statics",
+					"defaultProps",
+					"getDefaultProps",
+					"getInitialState",
+					"constructor",
+					"state",
+					"componentWillMount",
+					"componentDidMount",
+					"componentWillReceiveProps",
+					"shouldComponentUpdate",
+					"componentWillUpdate",
+					"componentDidUpdate",
+					"componentWillUnmount"
+				]
+			}
+		}],
 	}
 }
