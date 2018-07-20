@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { AnimatedRoute } from 'react-router-transition'
 
 import { Home, SignIn, NotFound } from '@/routes'
 
@@ -15,12 +15,6 @@ const list = [{
 	component: NotFound,
 }]
 
-list.forEach((it, i) => {
-	it.atEnter = { opacity: 0, translateX: -100 }
-	it.atLeave = { opacity: 0, translateX: -100 }
-	it.atActive = { opacity: 1, translateX: 0 }
-})
-
 export default class Routes extends Component {
 	constructor(props) {
 		super(props)
@@ -28,10 +22,8 @@ export default class Routes extends Component {
 	}
 
 	render() {
-		// <AnimatedSwitch atEnter={{ opacity: 0, translateX: -100 }} atLeave={{ opacity: 0, translateX: 100 }} atActive={{ opacity: 1, translateX: 0 }} className="transfrom-container">
-		// </AnimatedSwitch>
 		return (
-			<Router basename="/" forceRefresh={false}>
+			<Router basename="/">
 				<Routers />
 			</Router>
 		)
@@ -46,15 +38,8 @@ class Routers extends Component {
 	render() {
 		return (
 			<Switch>
-				{list.map((it, i) => <AnimatedRoute className="transfrom-container" key={i} mapStyles={this._mapStyles} {...it} />)}
+				{list.map((it, i) => <Route key={i} {...it} />)}
 			</Switch>
 		)
-	}
-
-	_mapStyles(styles) {
-		console.info(styles)
-		return {
-			transform: `translateX(${styles.translateX})`,
-		}
 	}
 }
