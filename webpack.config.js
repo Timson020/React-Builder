@@ -77,7 +77,7 @@ const releaseconfig = {
 	devtool: '',
 	entry: {
 		app: './src/index.js',
-		vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'react-router-dom', 'redux', 'immutable'],
+		vendor: ['react', 'react-dom', 'react-redux', 'react-router-dom', 'redux', 'immutable'],
 	},
 	output: {
 		path: path.resolve(__dirname, './dist'),
