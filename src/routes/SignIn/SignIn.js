@@ -14,7 +14,7 @@ class SignIn extends Component {
 
 	render() {
 		const { location } = this.props
-		console.info(location.state)
+		console.info(location)
 		return (
 			<div id="SignIn" className="flex SignIn">SignIn</div>
 		)
