@@ -27,7 +27,7 @@ const defaultconfig = {
 const developmentconfig = {
 	mode: 'development',
 	entry: {
-		build: './src/index.js',
+		app: './src/index.js',
 	},
 	output: {
 		path: path.resolve(__dirname, './dist'),
@@ -76,8 +76,8 @@ const releaseconfig = {
 	mode: 'production',
 	devtool: '',
 	entry: {
-		build: './src/index.js',
-		vendor: ['react'],
+		app: './src/index.js',
+		vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'react-router-dom', 'redux', 'immutable'],
 	},
 	output: {
 		path: path.resolve(__dirname, './dist'),
