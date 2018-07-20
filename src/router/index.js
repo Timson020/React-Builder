@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
-import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import { Home, SignIn, NotFound } from '@/routes'
 
@@ -40,7 +40,7 @@ class Routers extends Component {
 		const { location } = this.props
 		return (
 			<TransitionGroup style={{ width: '100%', height: '100%' }}>
-				<CSSTransition key={location} classNames="fade" timeout={1000}>
+				<CSSTransition key={location.key} classNames="router" timeout={800}>
 					<Switch location={location}>
 						{list.map((it, i) => <Route key={i} {...it} />)}
 					</Switch>
