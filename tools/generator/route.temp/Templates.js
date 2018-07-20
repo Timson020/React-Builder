@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Proptypes from 'prop-types'
 
 import './Templates.scss'
@@ -13,7 +14,11 @@ export default class Templates extends Component {
 
 	render() {
 		return (
-			<div id="Templates" className="Templates">Templates</div>
+			<div id="Templates" className="flex Templates">Templates</div>
 		)
 	}
 }
+
+export default connect(state => ({
+	user: state.User.toJSON(),
+}))(Templates)

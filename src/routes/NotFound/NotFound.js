@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Proptypes from 'prop-types'
 
 import './NotFound.scss'
 
-export default class NotFound extends Component {
+class NotFound extends Component {
 	static propTypes = {}
 
 	constructor(props){
@@ -13,7 +14,12 @@ export default class NotFound extends Component {
 
 	render() {
 		return (
-			<div id="NotFound" className="NotFound">NotFound</div>
+			<div id="NotFound" className="flex NotFound">NotFound</div>
 		)
 	}
 }
+
+export default connect(state => ({
+	user: state.User.toJSON(),
+}))(NotFound)
+

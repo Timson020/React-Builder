@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Proptypes from 'prop-types'
 
 import './Home.scss'
 
 import { goNotFound, goSignIn } from './module'
 
-export default class Home extends Component {
+class Home extends Component {
 	static propTypes = {}
 
 	constructor(props){
 		super(props)
 		this.state = {}
-
 		this._goSignIn = goSignIn.bind(this)
 		this._goNotFound = goNotFound.bind(this)
 	}
@@ -25,3 +25,7 @@ export default class Home extends Component {
 		)
 	}
 }
+
+export default connect(state => ({
+	user: state.User.toJSON(),
+}))(Home)

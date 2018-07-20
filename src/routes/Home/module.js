@@ -7,5 +7,5 @@ export function goNotFound() {
 
 export function goSignIn() {
 	const { history } = this.props
-	history.push('/signin', {})
+	history.push('/signin', { data: '自定义数据' })
 }
