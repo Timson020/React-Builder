@@ -1,9 +1,10 @@
-import Home from './Home'
-import SignIn from './SignIn'
-import NotFound from './NotFound'
+import Loadable from 'react-loadable'
+import Loading from './Loading'
 
-export {
-	Home,
-	SignIn,
-	NotFound,
+const o = {
+	Home: Loadable({ loader: () => import('./Home'), loading: Loading }),
+	SignIn: Loadable({ loader: () => import('./SignIn'), loading: Loading }),
+	NotFound: Loadable({ loader: () => import('./NotFound'), loading: Loading }),
 }
+
+export default o

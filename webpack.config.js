@@ -31,7 +31,7 @@ const developmentconfig = {
 	},
 	output: {
 		path: path.resolve(__dirname, './dist'),
-		publicPath: '/dist/',
+		publicPath: './',
 		filename: './js/[name].js?[hash]',
 	},
 	module: {
@@ -82,7 +82,7 @@ const releaseconfig = {
 	output: {
 		path: path.resolve(__dirname, './dist'),
 		publicPath: host,
-		filename: 'src/js/[name].js?[hash]'
+		filename: 'src/js/[name].js?[hash]',
 	},
 	module: {
 		rules: [{

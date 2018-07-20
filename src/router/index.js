@@ -2,18 +2,18 @@ import React, { Component } from 'react'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import { Home, SignIn, NotFound } from '@/routes'
+import routes from '@/routes'
 
 const list = [{
 	exact: true,
 	path: '/',
-	component: Home,
+	component: routes.Home,
 }, {
 	exact: true,
 	path: '/signin',
-	component: SignIn,
+	component: routes.SignIn,
 }, {
-	component: NotFound,
+	component: routes.NotFound,
 }]
 
 export default class Routes extends Component {

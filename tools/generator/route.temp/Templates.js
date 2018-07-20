@@ -4,7 +4,7 @@ import Proptypes from 'prop-types'
 
 import './Templates.scss'
 
-export default class Templates extends Component {
+class Templates extends Component {
 	static propTypes = {}
 
 	constructor(props){

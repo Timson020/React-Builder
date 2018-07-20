@@ -1,6 +1,6 @@
 {
 	"presets": ["react", "stage-3"],
-	"plugins": ["transform-async-to-generator", ["transform-runtime", {
+	"plugins": ["syntax-dynamic-import", "transform-async-to-generator", ["transform-runtime", {
 		"polyfill": false,
 		"regenerator": true
 	}], ["transform-class-properties", { "spec": true }]]
