@@ -1,11 +1,13 @@
 {
 	"name": "React-Builder",
-	"version": "1.1.0",
-	"description": "It is a webapp for React",
+	"version": "1.0.0",
+	"description": "Description",
 	"main": "app.js",
 	"scripts": {
+		"init": "rm -fr package-lock.json && rm -fr yarn.lock && rm -fr .git && npm i && babel-node ./tools/init.js && cd ..",
 		"r": "node ./tools/generator/index.js r",
-		"dev": "cross-env NODE_ENV=development webpack-serve"
+		"dev": "cross-env NODE_ENV=development webpack-serve",
+		"release": "rm -fr ./dist/src && cross-env NODE_ENV=production webpack ---mode=production --progress --hide-modules"
 	},
 	"dependencies": {
 		"immutable": "3.8.2",
@@ -34,7 +36,10 @@
 		"eslint": "5.1.0",
 		"eslint-plugin-react": "7.1.0",
 		"file-loader": "1.1.11",
+		"html-webpack-plugin": "3.2.0",
+		"mini-css-extract-plugin": "0.4.1",
 		"node-sass": "4.9.2",
+		"prompt": "1.0.0",
 		"sass-loader": "7.0.3",
 		"style-loader": "0.21.0",
 		"webpack": "4.16.0",

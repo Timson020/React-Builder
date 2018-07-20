@@ -14,6 +14,9 @@ export default function reducer(state = initialState, action = {}) {
 	case ActionTypes.RESET_ALL_STATE: {
 		return initialState
 	}
+	case ActionTypes.MERGE_USER: {
+		return state.merge(action.data)
+	}
 	default:
 		return state
 	}

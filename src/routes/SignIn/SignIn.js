@@ -10,10 +10,11 @@ class SignIn extends Component {
 	constructor(props){
 		super(props)
 		this.state = {}
-		console.info(this.props.location.state)
 	}
 
 	render() {
+		const { location } = this.props
+		console.info(location.state)
 		return (
 			<div id="SignIn" className="flex SignIn">SignIn</div>
 		)

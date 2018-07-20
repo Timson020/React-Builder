@@ -1,10 +1,10 @@
 const path = require('path')
-// const webpack = require('webpack')
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-// const htmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const htmlWebpackPlugin = require('html-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
-console.info(1)
+
 // 开发环境下的端口
 const port = 9000
 
@@ -75,6 +75,72 @@ const developmentconfig = {
 const releaseconfig = {
 	mode: 'production',
 	devtool: '',
+	entry: {
+		build: './src/index.js',
+		vendor: ['react'],
+	},
+	output: {
+		path: path.resolve(__dirname, './dist'),
+		publicPath: host,
+		filename: 'src/js/[name].js?[hash]'
+	},
+	module: {
+		rules: [{
+			test: /\.js$/,
+			loader: 'babel-loader',
+			exclude: /node_modules/,
+		}, {
+			test: /\.css$/,
+			loader: MiniCssExtractPlugin.loader,
+		}, {
+			test: /\.(scss|sass)$/,
+			use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+		}, {
+			test: /\.(eot|ttf|woff|woff2)$/,
+			loader: 'file-loader',
+			options: {
+				name: 'src/font/[name].[ext]?[hash]',
+			},
+		}, {
+			test: /\.(png|jpg|gif|svg)$/,
+			loader: 'file-loader',
+			options: {
+				name: 'src/img/[name].[ext]?[hash]',
+			},
+		}],
+	},
+	optimization: {
+		splitChunks: {
+			cacheGroups: {
+				commons: {
+					name: "vendor",
+					chunks: "initial",
+					minChunks: 2,
+				},
+			},
+		},
+	},
+	plugins: [
+		// 插件中的全局变量
+		new webpack.DefinePlugin({ 'process.env': { NODE_ENV: '"production"' } }),
+		// loder里面的配置
+		new webpack.LoaderOptionsPlugin({ minimize: true }),
+		// css
+		new MiniCssExtractPlugin({ filename: 'src/css/style.css', chunkFilename: "[id].css" }),
+		// html
+		new htmlWebpackPlugin({
+			title: '{{name}}',
+			filename: 'index.html', // 通过模板生成的文件名
+			template: 'index.html', // 模板路径
+			inject: 'body', // 是否自动在模板文件添加 自动生成的js文件链接
+			hash: true,
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+				removeAttributeQuotes: true,
+			}
+		})
+	],
 }
 
 const config = Object.assign(defaultconfig, isProd ? releaseconfig : developmentconfig)

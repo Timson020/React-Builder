@@ -6,6 +6,7 @@ export function goNotFound() {
 }
 
 export function goSignIn() {
-	const { history } = this.props
+	const { history, dispatch } = this.props
+	dispatch({ type: ActionTypes.MERGE_USER, data: { realname: 'timson' } })
 	history.push('/signin', { data: '自定义数据' })
 }
