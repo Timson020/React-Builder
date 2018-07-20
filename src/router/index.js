@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
 import { Home, SignIn, NotFound } from '@/routes'
 
@@ -9,6 +9,7 @@ const list = [{
 	path: '/',
 	component: Home,
 }, {
+	exact: true,
 	path: '/signin',
 	component: SignIn,
 }, {
@@ -24,7 +25,7 @@ export default class Routes extends Component {
 	render() {
 		return (
 			<Router basename="/">
-				<Routers />
+				<Route path="/" render={({ location }) => <Routers location={location} /> } />
 			</Router>
 		)
 	}
@@ -36,10 +37,15 @@ class Routers extends Component {
 	}
 
 	render() {
+		const { location } = this.props
 		return (
-			<Switch>
-				{list.map((it, i) => <Route key={i} {...it} />)}
-			</Switch>
+			<TransitionGroup style={{ width: '100%', height: '100%' }}>
+				<CSSTransition key={location} classNames="fade" timeout={1000}>
+					<Switch location={location}>
+						{list.map((it, i) => <Route key={i} {...it} />)}
+					</Switch>
+				</CSSTransition>
+			</TransitionGroup>
 		)
 	}
 }
