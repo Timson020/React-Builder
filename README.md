@@ -64,4 +64,14 @@ git clone https://github.com/Timson020/React-Builder.git
 
 ```
 npm run init
+
+cd projectName
+
+npm run dev
+```
+
+## Release
+
+```
+npm run release
 ```
