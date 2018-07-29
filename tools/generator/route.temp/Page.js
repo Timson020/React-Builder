@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Proptypes from 'prop-types'
 
-import './SignIn.scss'
+import './Page.scss'
 
-class SignIn extends Component {
+class Templates extends Component {
 	static propTypes = {}
 
 	constructor(props){
@@ -13,14 +13,12 @@ class SignIn extends Component {
 	}
 
 	render() {
-		const { location } = this.props
-		console.info(location)
 		return (
-			<div id="SignIn" className="flex SignIn">SignIn</div>
+			<div id="Templates" className="flex Templates">Templates</div>
 		)
 	}
 }
 
 export default connect(state => ({
 	user: state.User.toJSON(),
-}))(SignIn)
+}))(Templates)

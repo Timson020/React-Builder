@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Proptypes from 'prop-types'
 
-import './Home.scss'
+import './Page.scss'
 
 import { goNotFound, goSignIn } from './module'
 

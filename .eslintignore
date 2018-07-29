@@ -1,8 +1,5 @@
 # config
-
 webpack.config.js
 
-
 # release
-
-/dist/*
+dist

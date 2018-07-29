@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Proptypes from 'prop-types'
 
-import './NotFound.scss'
+import './Page.scss'
 
 class NotFound extends Component {
 	static propTypes = {}
