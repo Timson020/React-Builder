@@ -1,10 +1,10 @@
 import Loadable from 'react-loadable'
 import Loading from './Loading'
 
-const o = {
+const routes = {
 	Home: Loadable({ loader: () => import('./Home'), loading: Loading }),
 	SignIn: Loadable({ loader: () => import('./SignIn'), loading: Loading }),
 	NotFound: Loadable({ loader: () => import('./NotFound'), loading: Loading }),
 }
 
-export default o
+export default routes
